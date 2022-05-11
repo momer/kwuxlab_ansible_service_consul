@@ -1,0 +1,17 @@
+---
+
+#
+# Role-speciifc configuration
+#
+
+# Role:
+#   name: `ansible-consul`
+#   source: https://github.com/ansible-community/ansible-consul
+
+# Name the datacenter which will be the authoritative datacenter for ACL records
+target_consul_acl_datacenter: "global"
+# Set the 'raw key', which Consul will use for encryption across
+# all nodes in the cluster.
+target_consul_raw_key: "00000000000000000000000000000000000000000000"
+# Generate and add an ACL replication token if configured
+target_consul_acl_replication_token: "11111111111111111111111111111111111111111111"
