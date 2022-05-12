@@ -1,6 +1,10 @@
 ---
+# Default host path to store local facts
+ansible_local_facts_dir: "{{ ansible_local_facts_dir | default('/etc/ansible/facts.d') }}"
+
 # See kwuxlab_ansible_service_docker/vars.yml
 kwuxlab_docker_user: kwuxlab_dockerer
+# Set host ansible python interpreter
 ansible_python_interpreter: /usr/bin/python3
 
 # Once Consul has been installed, the host will be configured such that
