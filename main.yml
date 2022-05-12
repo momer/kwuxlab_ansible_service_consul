@@ -9,7 +9,7 @@
 #    some nodes have been designated as Consul Servers, by setting the variable
 #    `consul_server=true`, while others have been configured as
 #    clients by simply not setting that variable, or setting it to false.
-- hosts: kwuxlab_hosts
+- hosts: "{{ variable_hosts | default('kwuxlab_hosts') }}"
   strategy: linear
   become: yes
   gather_facts: yes

@@ -23,9 +23,9 @@ target_consul_acl_master_token_display: false
 kwuxlab_consul_network: kwuxlab_consul_network
 # Details @ https://hub.docker.com/r/bitnami/consul
 target_consul_version: "1.11.4"
-target_consul_image: "bitnami/consul:{{ local_consul_version }}"
+target_consul_image: "bitnami/consul:{{ target_consul_version }}"
 target_consul_root_directory: "/var/lib/consul"
-target_consul_data_directory: "{{ local_consul_root_directory }}/data"
+target_consul_data_directory: "{{ target_consul_root_directory }}/data"
 target_consul_container_uid: 1001
 
 target_consul_container_name: "kwuxlab_consul"
