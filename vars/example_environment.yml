@@ -9,7 +9,7 @@
 #   source: https://github.com/ansible-community/ansible-consul
 
 # Name the datacenter which will be the authoritative datacenter for ACL records
-target_consul_acl_datacenter: "global"
+target_consul_acl_datacenter: "dc1"
 # Recommended: set the target_consul_raw_key
 #   Set the 'raw key', which Consul will use for encryption across
 #   all nodes in the cluster.
