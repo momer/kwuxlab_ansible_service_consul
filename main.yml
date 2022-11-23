@@ -22,6 +22,11 @@
   vars:
     target_consul_datacenter_members: "{{ groups['docker'] | map('extract', hostvars) | selectattr('datacenter', 'equalto', datacenter) | map(attribute='datacenter') | list }}"
 
+    # Note: consul_node_role hostvar is required by the Vault/Consul playbooks
+    # in some scenarios.
+    #
+    # We will have duplication of consul_node_role and consul_role variables
+    # as a temporary fix.
     target_consul_join_wan: >
       [ {% for host in groups['docker'] %}
         {% if ansible_nodename != hostvars[host]['ansible_facts']['nodename'] and hostvars[host]['consul_node_role'] == 'server' %}
