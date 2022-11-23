@@ -24,7 +24,7 @@
 
     target_consul_join_wan: >
       [ {% for host in groups['docker'] %}
-        {% if ansible_nodename != hostvars[host]['ansible_facts']['nodename'] and (hostvars[host]['consul_server'] is defined and ((hostvars[host]['consul_server'] | bool) is sameas true)) %}
+        {% if ansible_nodename != hostvars[host]['ansible_facts']['nodename'] and hostvars[host]['consul_node_role'] == 'server' %}
         '{{ hostvars[host]['ansible_facts']['nodename'] }}'
         {% if not loop.last %},{% endif %}
         {% endif %}
